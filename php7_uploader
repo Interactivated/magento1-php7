@@ -1,0 +1,11 @@
+--- lib/Varien/File/Uploader.php	2017-06-26 18:06:33.000000000 +0300
++++ lib/Varien/File/Uploader1.php	2017-06-26 18:06:18.000000000 +0300
+@@ -271,7 +271,7 @@
+         //run validate callbacks
+         foreach ($this->_validateCallbacks as $params) {
+             if (is_object($params['object']) && method_exists($params['object'], $params['method'])) {
+-                $params['object']->$params['method']($this->_file['tmp_name']);
++                $params['object']->{$params['method']}($this->_file['tmp_name']);
+             }
+         }
+     }
